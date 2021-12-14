@@ -22,15 +22,16 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 <body style='margin: 0; overflow: hidden;'>
-    <div id="app">
-        {{ message }}
-    </div>
+
     <a-scene cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [gps-entity-place];"
         vr-mode-ui="enabled: false" embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 
-        <a-camera gps-camera="minDistance: 40;" rotation-reader>
+        <a-camera gps-camera="minDistance: 40;" rotation-reader> <div id="app">
+            {{ message }}
+        </div>
         </a-camera>
+       
     </a-scene>
     <script>
         let lat = 0;
